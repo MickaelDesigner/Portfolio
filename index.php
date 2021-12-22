@@ -30,7 +30,7 @@ Template Name: Mickael
     </header>
     <ul class="navegation">
         <li><a href="./index.php" data-img="WORK">WORK</a></li>
-        <li><a href="template/about.php" data-img="ABOUT">ABOUT</a></li>
+        <li><a href="./template/about.php" data-img="ABOUT">ABOUT</a></li>
         <div class="navegation__sci">
             <a href="#" class="icon__nav"><ion-icon name="logo-facebook"></ion-icon></a>
             <a href="#" class="icon__nav"><ion-icon name="logo-instagram"></ion-icon></a>
