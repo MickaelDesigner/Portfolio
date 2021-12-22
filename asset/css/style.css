@@ -1,0 +1,600 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --color1: #25174E;
+    --color2: #D3FFF7;
+}
+
+.dark{
+    --color1: #d3fff7;
+    --color2: #25174E;
+}
+
+/*========== PAGE HOME ==========*/
+
+header{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 10000;
+}
+
+header .logo{
+    position: relative;
+    display: inline-flex;
+    color: var(--color1);
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.rightSide{
+    display: flex;
+}
+
+.btns{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.btns ion-icon{
+    font-size: 1.5em;
+    color:var(--color1)
+}
+
+.btns.menuToggle ion-icon{
+    font-size: 3em;
+}
+.btns ion-icon:nth-child(2){
+    display: none;
+}
+
+.btns.active ion-icon:nth-child(2){
+    display: block;
+}
+
+.btns.active ion-icon:nth-child(1){
+    display: none;
+}
+
+.main{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    user-select: none;
+    mix-blend-mode:screen;
+}
+
+.title__main{
+    text-decoration: none;
+}
+
+.title__main h2{
+    font-weight: 700;
+    font-size: 60px;
+}
+
+.dark .mask{
+    filter:invert(1);
+    mix-blend-mode:multiply;
+}
+
+.main h2{
+    position: relative;
+    z-index: 3;
+    font-size: 16vw;
+    color: var(--color1);
+    text-shadow: 0 20px 30px rgba(0,0,0,0.2);
+}
+
+.navegation{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    background: var(--color2);
+    z-index: 4;
+    transition: 0.5s;
+}
+
+.navegation.active{
+    left: 0;
+}
+
+.navegation li{
+    list-style: none;
+    padding: 15px;
+}
+
+.navegation li a{
+    display: flex;
+    font-size: 5em;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--color1);
+    letter-spacing: 0.5em;
+    padding: 50px;
+}
+
+.navegation a::before{
+    content: attr(data-img);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    font-weight: bolder;
+    letter-spacing: .4em;
+    font-size: 3em;
+    opacity: 0;
+    z-index: -1;
+}
+
+.navegation a:hover::before{
+    letter-spacing: 0em;
+    opacity: .1;
+    transition: .3s ease-out;
+}
+
+.navegation__sci a{
+    color: var(--color1);
+    font-size: 2em;
+    padding: 25px;
+}
+
+.copyright__sci p{
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyrightTextSci{
+    position: relative;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: var(--color1);
+}
+
+.navegation li a:hover{
+    color: var(--color1);
+}
+
+.copyrightText{
+    position: absolute;
+    left: 100px;
+    bottom: 40px;
+    z-index: 4;
+    font-weight: 500;
+    font-size: 1.2em;
+    color: var(--color1);
+}
+
+.sci{
+    position: absolute;
+    right: 100px;
+    bottom: 40px;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+}
+
+.sci li{
+    list-style: none;
+}
+
+.sci li a{
+    text-decoration: none;
+    color: var(--color1);
+    font-size: 1.75em;
+}
+
+section{
+    background-color: var(--color2);
+}
+
+.cover{
+    position: absolute;
+    width: 943px;
+    height: 100vh;
+    left: 980px;
+    top: 0px;
+}
+
+/*========== PAGE ABOUT ==========*/
+
+.home__about{
+    color: var(--color1);
+}
+
+.about__container .creative__about{
+    position: absolute;
+    left: 7.24%;
+    top: 28%;
+    font-weight: 500;
+    font-size: 68px;
+}
+
+.about__container .description__about{
+    position: absolute;
+    left: 7.24%;
+    right: 56%;
+    top: 40%;
+    bottom: 50.56%;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 17.5px;
+    line-height: 25px;
+}
+
+.addres__about{
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction:initial;
+    left: 8%;
+    right: 77%;
+    top: 56%;
+}
+
+.mail__about{
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction:initial;
+    left: 8%;
+    right: 77%;
+    top: 59%;
+}
+
+.mail__about a{
+    text-decoration:none;
+    color: var(--color1);
+    margin-right: 5px;
+}
+
+.newsletter__about{
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: inherit;
+    left: 8%;
+    right: 72%;
+    top: 62%;
+}
+
+.camp{
+    margin-left: 15px;
+    width: 220px;
+    text-align: center;
+    color: var(--color2);
+    background: none;
+    border-color: var(--color1);
+}
+
+.camp .placeholder{
+    color: var(--color1);
+}
+
+.btn-sub{
+    width: 85px;
+    height: 24px;
+    background: var(--color1);
+    color: var(--color2);
+    border: none;
+}
+
+
+/*========== PAGE MICKAEL ==========*/
+
+.background{
+    position: relative;
+    width: 1102px;
+    height: 645px;
+    left: 409px;
+    top: 100px;
+}
+
+.info__container__mickael{
+    position: relative;
+    display: flex;
+    justify-items: space-around;
+    align-items: center;
+    width: 1100px;
+    height: 350px;
+    left: 409px;
+}
+
+.container__creative__mickael{
+    width: 800px;
+}
+
+.creative__mickael{
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--color1);
+    margin-top: 25px;
+}
+
+.description__creative__mickael{
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--color1);
+    width: 750px;
+}
+
+.links__creative__mickael{
+    position: absolute;
+    left: 825px;
+    top: 135px;
+}
+
+.visit{
+    width: 75px;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: var(--color1);
+    border: solid 2px var(--color1);
+    color: var(--color2);
+    margin-right: 15px;
+}
+
+.case__studio{
+    width: 150px;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: var(--color2);
+    border: solid 2px var(--color1);
+    color: var(--color1);
+}
+
+.info__links{
+    position: absolute;
+    display: flex;
+    left: 825px;
+    top: 170px;
+}
+
+.info__links__service{
+    color: var(--color1);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.info__links__date{
+    color: var(--color1);
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.separate{
+    position: absolute;
+    border: solid 1px var(--color1);
+    width: 271px;
+    height: 0px;
+    left: 820px;
+    top: 260px;
+}
+
+.share{
+    position: absolute;
+    display: flex;
+    align-content: center;
+    left: 825px;
+    top: 275px;
+}
+
+.share__text{
+    color: var(--color1);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.icon__share{
+    color: var(--color1);
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 35px;
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px){
+/*========== PAGE INDEX ==========*/
+    header{
+        padding: 20px;
+    }
+
+    .copyrightText{
+        left: 20px;
+        bottom: 20px;
+    }
+    .sci{
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .navegation a::before{
+        font-size: 2em;
+    }
+
+/*========== PAGE ABOUT ==========*/
+    .description__about{
+        width: 550px;
+    }
+    .addres__about{
+        width: 250px;
+    }
+    .mail__about{
+        width: 250px;
+    }
+    .newsletter__about{
+        width: 340px;
+    }
+    .camp{
+        margin-left: 0;
+    }
+    .cover{
+        display: contents;
+    }
+
+/*========== PAGE MICKAEL ==========*/
+    .main__mickael{
+        height: 100%;
+        width: 100%;
+    }
+    .background{
+        width: 550px;
+        height: 400px;
+        left: 115px;
+        top: 150px;
+    }
+    .info__container__mickael{
+        width: 500px;
+        left: 125px;
+        top: 75px;
+    }
+    .description__creative__mickael{
+        width: 525px;
+    }
+    .links__creative__mickael{
+        left: 125px;
+        top: 300px;
+    }
+    .info__links{
+        left: 125px;
+        top: 335px;
+    }
+    .separate{
+        left: 125px;
+        top: 425px;
+    }
+    .share{
+        left: 125px;
+        top: 435px;
+    }
+}
+@media (max-width: 360px){
+/*========== PAGE INDEX ==========*/
+    .navegation li a{
+        font-size: 50px;
+    }
+/*========== PAGE ABOUT ==========*/
+    .creative__about h2{
+        font-size: 20px;
+    }
+    .about__container .creative__about {
+        font-size: 35px;
+        font-weight: 700;
+    }
+
+    .about__container .description__about{
+        font-size: 12px;
+        font-weight: 500;
+        width: 300px;
+        top: 235px;
+    }
+    .addres__about{
+        top: 415px;
+    }
+    .mail__about{
+        top: 440px;
+    }
+    .newsletter__about{
+        top: 465px;
+        width: 250px;
+        left: 35px;
+    }
+    .camp{
+        margin-left: 10px;
+    }
+    .btn-sub{
+        margin-left: 10px;
+    }
+/*========== PAGE MICKAEL ==========*/
+    .background{
+        width: 325px;
+        height: 200px;
+        left: 15px;
+        top: 100px;
+    }
+
+    .info__container__mickael{
+        width: 300px;
+        left: 25px;
+        top: 0;
+    }
+    .creative__mickael{
+        font-size: 25px;
+    }
+    .description__creative__mickael{
+        font-size: 12px;
+        width: 325px;
+    }
+    .links__creative__mickael{
+        left: 0px;
+        top: 275px;
+    }
+    .info__links{
+        left: 0;
+        top: 310px;
+    }
+    .separate{
+        left: 0;
+        top: 395px;
+    }
+    .share{
+        left: 0;
+        top: 400px;
+    }
+}
