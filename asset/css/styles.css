@@ -4,8 +4,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    transition: all .2 linear;
 }
-
 :root{
     --color1: #25174E;
     --color2: #D3FFF7;
@@ -17,6 +19,51 @@
 }
 
 /*========== PAGE HOME ==========*/
+body{
+    background-color: var(--color2);
+}
+
+.container{
+    padding-top: 175px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+a.link__title{
+    color: var(--color1);
+    text-decoration: none;
+}
+
+.text{
+    font-weight: 600;
+    font-size: 85px;
+    text-transform:uppercase;
+    cursor: pointer;
+}
+
+.container .text:hover{
+    color: var(--color2);
+    position: relative;
+    z-index: 100;
+}
+
+.container .text:hover ~ .hover-img{
+    transform: translate(0) scale(1);
+    opacity: 1;
+}
+
+.hover-img{
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate() scale(1);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+}
 
 header{
     position: absolute;
@@ -81,26 +128,7 @@ header .logo{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.main video{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.mask{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    user-select: none;
-    mix-blend-mode:screen;
+    overflow: hidden;
 }
 
 .title__main{
@@ -205,7 +233,7 @@ header .logo{
     position: absolute;
     left: 100px;
     bottom: 40px;
-    z-index: 4;
+    z-index: 2;
     font-weight: 500;
     font-size: 1.2em;
     color: var(--color1);
@@ -215,7 +243,7 @@ header .logo{
     position: absolute;
     right: 100px;
     bottom: 40px;
-    z-index: 4;
+    z-index: 2;
     display: flex;
     flex-direction: column;
 }
@@ -234,18 +262,19 @@ section{
     background-color: var(--color2);
 }
 
+/*========== PAGE ABOUT ==========*/
+
+.home__about{
+    color: var(--color1);
+    overflow: hidden;
+}
+
 .cover{
     position: absolute;
     width: 943px;
     height: 100vh;
     left: 980px;
     top: 0px;
-}
-
-/*========== PAGE ABOUT ==========*/
-
-.home__about{
-    color: var(--color1);
 }
 
 .about__container .creative__about{
@@ -312,7 +341,7 @@ section{
     width: 220px;
     text-align: center;
     color: var(--color2);
-    background: none;
+    padding: 2px;
     border-color: var(--color1);
 }
 
@@ -327,7 +356,6 @@ section{
     color: var(--color2);
     border: none;
 }
-
 
 /*========== PAGE MICKAEL ==========*/
 
@@ -448,29 +476,45 @@ section{
     margin-left: 35px;
     letter-spacing: 0.1em;
 }
-
-@media (max-width: 768px){
-/*========== PAGE INDEX ==========*/
-    header{
-        padding: 20px;
+@media (max-width: 1440px){
+    /*========== PAGE INDEX ==========*/
+    .hover-img{
+        left:auto;
     }
-
-    .copyrightText{
-        left: 20px;
-        bottom: 20px;
+    /*========== PAGE MICKAEL ==========*/
+    .background{
+        width: 70%;
+        left: 15%;
     }
-    .sci{
-        right: 20px;
-        bottom: 20px;
+    .info__container__mickael{
+        width: 70%;
+        left: 15%;
     }
-
-    .navegation a::before{
-        font-size: 2em;
+    .container__creative__mickael{
+        width: 45%;
     }
-
-/*========== PAGE ABOUT ==========*/
-    .description__about{
-        width: 550px;
+    .description__creative__mickael{
+        width: 600px;
+    }
+    .links__creative__mickael{
+        width: 45%;
+        left: 720px;
+    }
+    .info__links{
+        width: 45%;
+        left: 720px;
+    }
+    .separate{
+        width: 260px;
+        left: 720px;
+    }
+    .share{
+        width: 45%;
+        left: 720px;
+    }
+    /*========== PAGE ABOUT ==========*/
+    .cover{
+        right: auto;
     }
     .addres__about{
         width: 250px;
@@ -479,15 +523,135 @@ section{
         width: 250px;
     }
     .newsletter__about{
+        width: 350px;
+    }
+
+}
+@media (max-width: 1024px){
+    /*========== PAGE MICKAEL ==========*/
+    .background{
+        height: 50vh;
+    }
+    .info__container__mickael{
+        top: 3vh;
+    }
+    .container__creative__mickael{
+        top: 750px;
+    }
+    .creative__mickael{
+        width: 45vh;
+    }
+    h5.creative__mickael{
+        padding-top: 50px;
+        font-size: 40px;
+    }
+    .description__creative__mickael{
+        width: 40vh;
+        font-size: 15px;
+    }
+    .links__creative__mickael{
+        top: 120px;
+        left: 450px;
+    }
+    .info__links{
+        top: 160px;
+        left: 450px;
+    }
+    .separate{
+        top: 250px;
+        left: 450px;
+    }
+    .share{
+        top: 260px;
+        left: 450px;
+    }
+    /*========== PAGE ABOUT ==========*/
+    .cover{
+        height: 100%;
+        right: 0;
+    }
+    .about__container .creative__about{
+        font-size: 50px;
+        font-weight: 700;
+    }
+    .about__container .description__about{
+        top: 36%;
+    }
+    .addres__about{
+        top: 60%;
+    }
+    .mail__about{
+        top: 63%;
+    }
+    .newsletter__about{
+        top: 66%;
+    }
+}
+
+@media (max-width: 768px){
+/*========== PAGE INDEX ==========*/
+    header{
+        padding: 50px;
+    }
+
+    .copyrightText{
+        left: 50px;
+        bottom: 50px;
+    }
+    .sci{
+        right: 50px;
+        bottom: 50px;
+    }
+
+    .navegation a::before{
+        font-size: 2em;
+    }
+    .hover-img{
+        position: fixed;
+        left: auto;
+        height: auto;
+    }
+
+/*========== PAGE ABOUT ==========*/
+    .cover{
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        top: 130px;
+        left: 230px;
+    }
+
+    .about__container .creative__about{
+        top: 500px;
+    }
+
+    .about__container .description__about{
+        top: 600px;
+    }
+
+    .description__about{
+        width: 550px;
+    }
+
+    .addres__about{
+        top: 735px;
+        width: 250px;
+    }
+
+    .mail__about{
+        top: 760px;
+        width: 250px;
+    }
+
+    .newsletter__about{
+        top: 788px;
         width: 340px;
     }
+
     .camp{
         margin-left: 0;
     }
-    .cover{
-        display: contents;
-    }
-
+    
 /*========== PAGE MICKAEL ==========*/
     .main__mickael{
         height: 100%;
@@ -495,86 +659,231 @@ section{
     }
     .background{
         width: 550px;
-        height: 400px;
+        height: 350px;
         left: 115px;
-        top: 150px;
+        top: 125px;
     }
     .info__container__mickael{
         width: 500px;
         left: 125px;
-        top: 75px;
     }
     .description__creative__mickael{
         width: 525px;
     }
+    h5.creative__mickael{
+        padding-top: 0;
+    }
+    
     .links__creative__mickael{
-        left: 125px;
-        top: 300px;
+        display: flex;
+        align-content: center;
+        left: 0;
+        width: 500px;
+        top: 290px;
     }
     .info__links{
-        left: 125px;
-        top: 335px;
+        left: 0;
+        width: 500px;
+        top: 330px;
+    }
+    .info__links__date{
+        width: max-content;
     }
     .separate{
-        left: 125px;
-        top: 425px;
+        left: 0;
+        top: 420px;
     }
     .share{
-        left: 125px;
-        top: 435px;
+        left: 0;
+        top: 430px;
     }
 }
-@media (max-width: 360px){
+@media (max-width: 412px){
 /*========== PAGE INDEX ==========*/
+    header{
+        padding: 25px;
+    }
+    a.link__title{
+        font-size: 50px;
+    }
+    .container{
+        top: 75px;
+    }
+    .copyrightText{
+        left: 25px;
+        bottom: 25px;
+    }
+    .sci{
+        right: 25px;
+        bottom: 25px;
+    }
     .navegation li a{
         font-size: 50px;
     }
+/*========== PAGE MICKAEL ==========*/
+    .main__mickael{
+        overflow: hidden;
+    }
+    .background{
+        width: 325px;
+        height: 200px;
+        left: 45px;
+        top: 150px;
+        overflow: hidden;
+    }
+    .info__container__mickael{
+        top: 80px;
+        left: 25px;
+    }
+    .description__creative__mickael{
+        width: 350px;
+        text-align: justify;
+    }
+    .links__creative__mickael{
+        top: 325px;
+        left: 50px;
+    }
+    .info__links{
+        top: 365px;
+        left: 50px;
+    }
+    .separate{
+        top: 452px;
+        left: 50px;
+    }
+    .share{
+        top: 460px;
+        left: 50px;
+    }
 /*========== PAGE ABOUT ==========*/
-    .creative__about h2{
-        font-size: 20px;
+    .main{
+        overflow: hidden;
     }
-    .about__container .creative__about {
-        font-size: 35px;
-        font-weight: 700;
+    .cover{
+        left: 30px;
+        width: 350px;
+        top: 90px;
     }
-
+    .about__container .creative__about{
+        font-size: 42px;
+        top: 450px;
+    }
     .about__container .description__about{
-        font-size: 12px;
-        font-weight: 500;
-        width: 300px;
-        top: 235px;
+        top: 510px;
+        width: 350px;
+        font-size: 15px;
+        text-align: justify;
     }
     .addres__about{
-        top: 415px;
+        top: 700px;
     }
     .mail__about{
-        top: 440px;
+        top: 725px;
     }
     .newsletter__about{
-        top: 465px;
+        top: 750px;
+    }
+}
+
+@media (max-width: 375px){
+/*========== PAGE INDEX ==========*/
+header{
+    padding: 25px;
+    }
+    .navegation li a{
+        font-size: 35px;
+        padding-top: 15px;
+        padding: 25px;
+    }
+    .navegation :active{
+        margin-top: 50px;
+    }
+    .container{
+        top: 20px;
+    }
+    a.link__title{
+        font-size: 35px;
+    }
+    .copyrightText{
+        left: 25px;
+        bottom: 25px;
+        font-weight: 700;
+    }
+    .sci{
+        right: 25px;
+        bottom: 25px;
+    }
+    .hover-img{
+        width: 900px;
+        height: 700px;
+        overflow: hidden;
+    }
+
+/*========== PAGE ABOUT ==========*/
+    .cover{
         width: 250px;
-        left: 35px;
+        height: 250px;
+        top: 85px;
+        left: 25px;
+    }
+    .about__container .creative__about{
+        font-size: 30px;
+        top: 52%;
+    }
+    .about__container .description__about{
+        font-size: 13px;
+        line-height: 15px;
+        text-align: justify;
+        width: 310px;
+        top: 59%;
+    }
+    .addres__about{
+        top: 510px;
+        font-size: 15px;
+    }
+    
+    .mail__about{
+        top: 535px;
+        font-size: 15px;
+    }
+    .newsletter__about{
+        display: flex;
+        justify-content: start;
+        top: 560px;
+        font-size: 15px;
+        width: 280px;
+        left: 36px;
     }
     .camp{
-        margin-left: 10px;
+        margin-left: 15px;
     }
     .btn-sub{
-        margin-left: 10px;
+        margin-left: 15px;
     }
+    .copyrightText{
+        bottom: 25px;
+    }
+    .sci{
+        bottom: 25px;
+    }
+
 /*========== PAGE MICKAEL ==========*/
     .background{
         width: 325px;
         height: 200px;
         left: 15px;
         top: 100px;
+        overflow: hidden;
     }
-
+    .main__mickael{
+        overflow: hidden;
+    }
     .info__container__mickael{
         width: 300px;
         left: 25px;
         top: 0;
     }
-    .creative__mickael{
+    h5.creative__mickael {
         font-size: 25px;
     }
     .description__creative__mickael{
@@ -596,5 +905,8 @@ section{
     .share{
         left: 0;
         top: 400px;
+    }
+    .icon__share{
+        display: flex;
     }
 }

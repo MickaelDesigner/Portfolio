@@ -2,7 +2,7 @@
     <section class="main">
         <div class="home__about">
             <div class="about__container">
-                <img src="../asset/img/POST_FACE_C.jpg" class="cover">
+                <img src="../asset/img/POST_FACE_C2.jpg" class="cover">
                 <h2 class="creative__about">Creative Digital</h2>
                 <p class="description__about">Our websites, apps, installations, VR & AR experiences are all meticulouslycrafted in house by a tightly integrated team of designers and developers. Our websites, apps, installations, VR & AR experiences are all meticulouslycrafted in house by a tightly integrated team of designers and developers.</p>
             </div>
